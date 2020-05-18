@@ -1,0 +1,195 @@
+<div class="container-fluid">
+  <div class="row py-3">
+    <div class="col-12">
+      <nav aria-label="breadcrumb bg-light">
+        <ol class="breadcrumb my-0">
+          <li class="breadcrumb-item"><span class="material-icons">
+            home
+          </span></li>
+          <li class="breadcrumb-item">Company</li>
+          <li class="breadcrumb-item">create New Company</li>
+        </ol>
+      </nav>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="container-fluid">
+          <div class="row py-3 border-bottom">
+            <div class="col-8 d-flex align-items-center">
+              <span>Create New Company</span>
+            </div>
+            <div class="col-4 d-flex align-items-center justify-content-end">
+              <span class="px-2">Select Color</span>
+              <div class="dropdown">
+                <button class="btn btn-light btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <div [ngStyle]="{backgroundColor: company.color}" style="width: 20px; height: 20px; border-radius: 50%;"></div>
+                </button>
+                <div class="dropdown-menu py-0" aria-labelledby="dropdownMenuButton">
+                  <div class="container-fluid">
+                    <div class="row">
+                      <div class="col-12 bg-light py-2">
+                        <span>Select Color</span>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-12 d-flex flex-wrap">
+                        <div style="width: 20px; height: 20px; margin: 5px; border-radius: 50%;background-color: #1ECDA8;" (click)="colorSelect('#1ECDA8')"></div>
+                        <div style="width: 20px; height: 20px; margin: 5px; border-radius: 50%;background-color: #1EBEDE;" (click)="colorSelect('#1EBEDE')"></div>
+                        <div style="width: 20px; height: 20px; margin: 5px; border-radius: 50%;background-color: #85796C;" (click)="colorSelect('#85796C')"></div>
+                        <div style="width: 20px; height: 20px; margin: 5px; border-radius: 50%;background-color: #FDA633;" (click)="colorSelect('#FDA633')"></div>
+                        <div style="width: 20px; height: 20px; margin: 5px; border-radius: 50%;background-color: #FD4577;" (click)="colorSelect('#FD4577')"></div>
+                        <div style="width: 20px; height: 20px; margin: 5px; border-radius: 50%;background-color: #447EFF;" (click)="colorSelect('#447EFF')"></div>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row py-3">
+            <div class="col-lg-6 col-12">
+              <div class="form-group">
+                <label for="companyname">Comapnay Name</label>
+                <input [(ngModel)]="company.name" type="text" class="form-control" id="companyname" placeholder="Comapnay Name">
+              </div>
+            </div>
+            <div class="col-lg-3 col-12">
+              <div class="form-group">
+                <label for="companycode">Comapnay Code</label>
+                <input [(ngModel)]="company.code" type="text" class="form-control" id="companycode" placeholder="Eg: CVP-Creative">
+              </div>
+            </div>
+            <div class="col-lg-3 col-12">
+              <div class="form-group">
+                <label for="companycode">Phone</label>
+                <div class="input-group">
+                  <input [(ngModel)]="company.phone" type="number" class="form-control" placeholder="phone number">
+                  <div class="input-group-append">
+                    <span class="input-group-text" id="basic-addon2">@</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-12">
+              <div class="form-group">
+                <label for="companycode">Email</label>
+                <div class="input-group">
+                  <input [(ngModel)]="company.email" type="mail" class="form-control" placeholder="Email id">
+                  <div class="input-group-append">
+                    <span class="input-group-text" id="basic-addon2">@</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-12">
+              <div class="form-group">
+                <label for="companycode">Fax</label>
+                <div class="input-group">
+                  <input [(ngModel)]="company.fax" type="number" class="form-control" placeholder="Fax">
+                  <div class="input-group-append">
+                    <span class="input-group-text" id="basic-addon2">@</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-12">
+              <div class="form-group">
+                <label for="companycode">Website</label>
+                <input [(ngModel)]="company.website" type="text" class="form-control" id="companycode" placeholder="www.sample.com">
+              </div>
+            </div>
+            <div class="col-lg-3 col-12">
+              <div class="form-group">
+                <label for="companycode">Country</label>
+                <select [(ngModel)]="company.country" class="form-control">
+                  <option *ngFor="let country of countryList" value="{{country}}">{{country}}</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-lg-3 col-12">
+              <div class="form-group">
+                <label for="companycode">Address line 1</label>
+                <input [(ngModel)]="company.address1" type="text" class="form-control" id="companycode" placeholder="Strert, Area, Zip">
+              </div>
+            </div>
+            <div class="col-lg-3 col-12">
+              <div class="form-group">
+                <label for="companycode">Address line 2</label>
+                <input [(ngModel)]="company.address2" type="text" class="form-control" id="companycode" placeholder="City, State">
+              </div>
+            </div>
+            <div class="col-lg-3 col-12 d-flex align-items-center">
+              <div class="custom-control custom-switch">
+                <input type="checkbox" [(ngModel)]="company.status" class="custom-control-input" id="Status" >
+                <label class="custom-control-label" for="Status">Status</label>
+              </div>
+            </div>
+            <div class="col-lg-3 col-12 d-flex align-items-center">
+              <div class="custom-control custom-switch">
+                <input [(ngModel)]="company.report" type="checkbox" class="custom-control-input" id="report">
+                <label  class="custom-control-label" for="report" >Enable report</label>
+              </div>
+            </div>
+            <div class="col-lg-4 col-12">
+              <div class="d-flex flex-column">
+                <label for="companylogo">Logo</label>
+                <div class="d-flex">
+                  <input type="file" name="" (change)="logoSelect($event)" id="companylogo" *ngIf="company.logo === null">
+                  <div class="d-flex justify-content-center align-items-center position-relative" *ngIf="company.logo !== null">
+                    <img src="{{company.logo}}"  height="150px">
+                    <div class="box border-danger text-danger position-absolute d-flex align-items-center justify-content-center">
+                      <i class="las la-times-circle" (click)="logoclose()"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-12">
+              <div class="d-flex flex-column">
+                <label for="companylogo">Header</label>
+                <div class="d-flex">
+                  <input type="file" name="" (change)="headerSelect($event)" id="companylogo" *ngIf="company.header === null">
+                  <div class="d-flex justify-content-center align-items-center position-relative" *ngIf="company.header !== null">
+                      <img src="{{company.header}}"  height="150px">
+                    <div class="box border-danger text-danger position-absolute d-flex align-items-center justify-content-center">
+                      <i class="las la-times-circle" (click)="headerclose()"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-12">
+              <div class="d-flex flex-column">
+                <label for="companylogo">Footer</label>
+                <div class="d-flex">
+                  <input type="file" name="" (change)="footerSelect($event)" id="companylogo" *ngIf="company.footer === null">
+                  <div class="d-flex justify-content-center align-items-center position-relative" *ngIf="company.footer !== null">
+                    <img src="{{company.footer}}" height="150px">
+                    <div class="box border-danger text-danger position-absolute d-flex align-items-center justify-content-center">
+                      <i class="las la-times-circle" (click)="footerclose()"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row py-3">
+    <div class="col-12 d-flex align-items-center justify-content-end">
+      <button class="btn bg-primary" (click)="save()" *ngIf="addFlag">Save</button>
+    </div>
+    <div class="col-12 d-flex align-items-center justify-content-end">
+      <button class="btn bg-primary" (click)="update()" *ngIf="updateFlag">Update</button>
+    </div>
+  </div>
+</div>
+

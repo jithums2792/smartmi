@@ -1,1 +1,49 @@
+@import '~ngx-toastr/toastr';
+@font-face{
+  font-family: poppins-regular;
+  src: url(./assets/fonts/Poppins-Regular.ttf);
+}
+@font-face{
+  font-family: poppins-medium;
+  src: url(./assets/fonts/Poppins-Medium.ttf);
+}
 /* You can add global styles to this file, and also import other style files */
+body{
+  font-family: poppins-regular !important;
+  color: #999EBC !important;
+  font-size: 14px;
+}
+.bg-light{
+  background-color: #E7EBFF !important;
+}
+.bg-primary{
+  background-color: #5E77FF !important;
+  color: white !important;
+}
+.text-primary{
+  color: #5E77FF;
+}
+.breadcrumb{
+  background-color: transparent !important;
+}
+.las{
+  font-size: 24px;
+}
+.title{
+  font-family: poppins-medium;
+  color: #636177;
+  font-size: 14px;
+  font-weight:900;
+}
+.sub-title{
+  font-family: poppins-medium;
+   font-size: 12px;
+}
+.breadcrumb-item+.breadcrumb-item::before{
+  content: '' !important;
+  background: #dad9e8 !important;
+  width: 4px !important;
+  height: 8px !important;
+  border-radius: 50% !important;
+  margin-right: 7px !important;
+}

@@ -1,0 +1,4 @@
+.tile:hover {
+  background-color: rgb(72, 99, 255);
+  cursor: pointer;
+}

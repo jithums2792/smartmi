@@ -1,0 +1,95 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12 d-flex justify-content-center tile align-items-center py-4" [popover]="dashboard" [popoverOnHover]="false" (click)="navigate('dashboard/home')">
+      <span class="material-icons text-white">
+        dashboard
+      </span>
+    </div>
+    <div class="col-12 d-flex justify-content-center tile align-items-center py-4" [popover]="leads"
+      [popoverOnHover]="false" (click)="navigate('dashboard/leads')">
+      <span class="material-icons text-white">
+        bookmark_border
+      </span>
+    </div>
+    <div class="col-12 d-flex justify-content-center tile align-items-center py-4" [popover]="quotes"
+      [popoverOnHover]="false" (click)="navigate('dashboard/quotes')">
+      <span class="material-icons text-white">
+        description
+      </span>
+    </div>
+    <div class="col-12 d-flex justify-content-center tile align-items-center py-4" [popover]="products"
+      [popoverOnHover]="false" (click)="navigate('dashboard/products')">
+      <span class="material-icons text-white">
+        storefront
+      </span>
+    </div>
+    <div class="col-12 d-flex justify-content-center tile align-items-center py-4" [popover]="users"
+      [popoverOnHover]="false">
+      <span class="material-icons text-white">
+        person_outline
+      </span>
+    </div>
+    <div class="col-12 d-flex justify-content-center tile align-items-center py-4" [popover]="customers"
+      [popoverOnHover]="false">
+      <span class="material-icons text-white">
+        people_outline
+      </span>
+    </div>
+    <div class="col-12 d-flex justify-content-center tile align-items-center py-4" [popover]="projects"
+      [popoverOnHover]="false">
+      <span class="material-icons text-white">
+        extension
+      </span>
+    </div>
+    <div class="col-12 d-flex justify-content-center tile align-items-center py-4" [popover]="general"
+      [popoverOnHover]="false" (click)="navigate('dashboard/general')">
+      <span class="material-icons text-white">
+        layers
+      </span>
+    </div>
+
+    <popover-content #dashboard  placement="right" [animation]="true" [closeOnClickOutside]="true" [closeOnMouseOutside]="false">
+      Dashboard
+    </popover-content>
+    <popover-content #leads placement="right" [animation]="true" [closeOnClickOutside]="true"
+      [closeOnMouseOutside]="false">
+      Leads
+    </popover-content>
+    <popover-content #quotes placement="right" [animation]="true" [closeOnClickOutside]="true" [closeOnMouseOutside]="false">
+      Quotes
+    </popover-content>
+    <popover-content #products placement="right" [animation]="true" [closeOnClickOutside]="true" [closeOnMouseOutside]="false">
+      <div class="d-flex flex-column">
+        <span class="py-1">Products</span>
+        <span class="py-1">Product Ctegories</span>
+        <span class="py-1"> Average Cost</span>
+      </div>
+    </popover-content>
+    <popover-content #users placement="right" [animation]="true" [closeOnClickOutside]="true"
+      [closeOnMouseOutside]="false">
+      <div class="d-flex flex-column">
+        <span class="py-1">Users</span>
+        <span class="py-1">Roles and Assesebilities</span>
+      </div>
+    </popover-content>
+    <popover-content #customers placement="right" [animation]="true" [closeOnClickOutside]="true"
+      [closeOnMouseOutside]="false">
+      <div class="d-flex flex-column">
+        <span class="py-1">Customers</span>
+      </div>
+    </popover-content>
+    <popover-content #projects placement="right" [animation]="true" [closeOnClickOutside]="true"
+      [closeOnMouseOutside]="false">
+      <div class="d-flex flex-column">
+        <span class="py-1">Projects</span>
+        <span class="py-1">Project Requirement</span>
+      </div>
+    </popover-content>
+    <popover-content #general placement="right" [animation]="true" [closeOnClickOutside]="true"
+      [closeOnMouseOutside]="false">
+      <div class="d-flex flex-column">
+        <span class="py-1">General</span>
+      </div>
+    </popover-content>
+  </div>
+</div>
