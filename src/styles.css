@@ -47,3 +47,6 @@ body{
   border-radius: 50% !important;
   margin-right: 7px !important;
 }
+.la-edit, .la-trash-alt, .la-times-circle {
+  cursor: pointer;
+}

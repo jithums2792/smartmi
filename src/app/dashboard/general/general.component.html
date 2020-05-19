@@ -25,7 +25,7 @@
           <div class="row">
             <!-- sidebar start -->
             <div class="col-4 p-3 border-right">
-              <div class="border bg-white rounded d-flex justify-content-between align-items-center p-1 m-1" *ngFor="let sidenav of sidenavList">
+              <div class="border bg-white rounded d-flex justify-content-between align-items-center p-1 m-1" *ngFor="let sidenav of sidenavList" (click)="navigate(sidenav.url)">
                 <i class="las {{sidenav.icon}}"></i>
                 <div class="d-flex flex-column">
                   <span class="title">{{sidenav.name}}</span>

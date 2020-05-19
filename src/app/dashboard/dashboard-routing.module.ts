@@ -18,7 +18,8 @@ const routes: Routes = [
     {path: 'createquote', component: CreatequoteComponent},
     {path: 'products', component: ProductsComponent},
     {path: 'general', loadChildren: './general/general.module#GeneralModule'},
-    {path: '', redirectTo: 'home', pathMatch: 'full'},
+    {path: 'users', loadChildren: './users/users.module#UsersModule'},
+        {path: '', redirectTo: 'home', pathMatch: 'full'},
   ]}
 ];
 

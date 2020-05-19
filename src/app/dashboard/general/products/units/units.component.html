@@ -1,0 +1,50 @@
+<div class="container-fluid">
+  <div class="row py-2">
+    <div class="col-6 border-right">
+      <div class="container-fluid">
+
+        <div class="row py-2 bg-light">
+          <div class="col-4 d-flex align-items-center justify-content-start">Unit</div>
+          <div class="col-4 d-flex align-items-center justify-content-center">Symbol</div>
+          <div class="col-4 d-flex align-items-center justify-content-end">Action</div>
+        </div>
+        <div class="row py-2 border-bottom" *ngFor="let unit of unitList">
+          <div class="col-4 d-flex align-items-center justify-content-start">{{unit.name}}</div>
+          <div class="col-4 d-flex align-items-center justify-content-center">{{unit.symbol}}</div>
+          <div class="col-4 d-flex align-items-center justify-content-end">
+            <i class="las la-edit" (click)="edit(unit)"></i>
+            <i class="las la-trash-alt mx-1" (click)="delete(unit)"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-6">
+      <div class="container-fluid">
+
+        <div class="row">
+          <div class="col-12 py-2">
+            <span>Create New Measurement Unit</span>
+          </div>
+          <div class="col-12">
+            <div class="form-group">
+              <label for="unitname">Unit Name</label>
+              <input [(ngModel)]="unit.name" type="text" class="form-control" id="unitname" placeholder="Unit Name">
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="form-group">
+              <label for="unitsymbol">Unit Symbol</label>
+              <input [(ngModel)]="unit.symbol" type="text" class="form-control" id="unitsymbol" placeholder="Eg:- mm, cm, kg">
+            </div>
+          </div>
+          <div class="col-12 d-flex align-items-center justify-content-end">
+            <button class="btn bg-light btn-sm shadow-sm mx-1" (click)="update()" *ngIf="!addFlag">Update</button>
+            <button class="btn bg-light btn-sm shadow-sm" (click)="close()" *ngIf="!addFlag">Cancel</button>
+            <button class="btn bg-light btn-sm shadow-sm" (click)="add()" *ngIf="addFlag">Save</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

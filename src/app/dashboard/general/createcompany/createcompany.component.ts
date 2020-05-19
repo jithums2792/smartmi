@@ -43,7 +43,7 @@ export class CreatecompanyComponent implements OnInit {
                   this.updateFlag = !this.updateFlag;
                 } catch (error) {
 
-                  console.log('no data')
+                  console.log('no data');
                 }
                }
 
@@ -104,8 +104,7 @@ export class CreatecompanyComponent implements OnInit {
           const respdata = await this.companyservice.addNewCompany(this.company);
           if (respdata.name === this.company.name) {
             this.toastservice.success('Company created', 'Success');
-          }
-          else {
+          } else {
             this.toastservice.error('Something went wrong', 'Error');
           }
 

@@ -1,0 +1,18 @@
+<div class="container-fluid">
+  <div class="row py-3 border-bottom">
+    <div class="col-12">
+      <span class="title">Product Attributes</span>
+    </div>
+  </div>
+  <div class="row py-2 border-bottom">
+    <div class="col-12">
+      <button class="btn bg-primary btn-sm mx-1" *ngFor="let tile of attributeTiles" (click)="activeTile = tile.key">{{tile.name}}</button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <app-units *ngIf="activeTile === 1"></app-units>
+      <app-manufatures *ngIf="activeTile === 2"></app-manufatures>
+    </div>
+  </div>
+</div>
