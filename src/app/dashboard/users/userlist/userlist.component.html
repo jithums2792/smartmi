@@ -104,7 +104,7 @@
             <tbody>
               <tr *ngFor="let user of userList">
                 <th scope="row">
-                  <div class="d-flex align-items-center">
+                  <div class="d-flex align-items-center" [routerLink]="['/dashboard/users']">
                     <i class="fas fa-caret-up text-success mx-2"></i>
                     <span>{{user.name}}</span>
                   </div>
