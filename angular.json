@@ -18,15 +18,19 @@
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
-            "aot": false,
+            "aot": true,
             "assets": [
               "src/favicon.ico",
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "src/assets/css/solid.min.css",
+              "src/assets/css/icon-font.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/js/fontawsome.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -41,7 +45,6 @@
               "sourceMap": false,
               "extractCss": true,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -120,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "smartmi"
+    }
+  },
+  "defaultProject": "smartmi",
+  "cli": {
+    "analytics": false
+  }
 }

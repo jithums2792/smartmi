@@ -17,8 +17,8 @@ const routes: Routes = [
     {path: 'quotes', component: QuotesComponent},
     {path: 'createquote', component: CreatequoteComponent},
     {path: 'products', component: ProductsComponent},
-    {path: 'general', loadChildren: './general/general.module#GeneralModule'},
-    {path: 'users', loadChildren: './users/users.module#UsersModule'},
+    {path: 'general', loadChildren: () => import('./general/general.module').then(m => m.GeneralModule)},
+    {path: 'users', loadChildren: () => import('./users/users.module').then(m => m.UsersModule)},
         {path: '', redirectTo: 'home', pathMatch: 'full'},
   ]}
 ];

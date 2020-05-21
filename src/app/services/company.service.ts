@@ -26,4 +26,13 @@ export class CompanyService {
       console.log(error);
     }
   }
+  async editCompany(id, data) {
+    try {
+      let respdata;
+      await this.http.patch(this.url + 'company/update/' + id, data).forEach(data => respdata = data);
+      return respdata;
+    } catch (error) {
+      console.log(error);
+    }
+  }
 }
