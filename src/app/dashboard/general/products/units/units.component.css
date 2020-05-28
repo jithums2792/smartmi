@@ -1,0 +1,15 @@
+.text-smartmi {
+  font-size: 14px !important;
+  color: #646b9a !important;
+
+}
+.blue-btn {
+  height: 36px;
+  min-width: 140px;
+  max-width: 200px;
+  font-size: 13px;
+  text-align: center;
+  padding: 5px;
+  margin-bottom: 0!important;
+  border-radius: 2px;
+}

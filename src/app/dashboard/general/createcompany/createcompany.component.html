@@ -1,13 +1,18 @@
 <div class="container-fluid">
   <div class="row py-3">
-    <div class="col-12">
+    <div class="col-10">
       <nav aria-label="breadcrumb bg-light">
         <ol class="breadcrumb my-0">
-          <li class="breadcrumb-item"><span class="lnr lnr-home" [routerLink]="['/dashboard']"></span></li>
-          <li class="breadcrumb-item" [routerLink]="['/dashboard/general/home/company']">Company</li>
-          <li class="breadcrumb-item">create New Company</li>
+          <li class="breadcrumb-item">
+            <i class="fas fa-home" [routerLink]="['/dashboard']"></i></li>
+          <li class="breadcrumb-item"><a [routerLink]="['/dashboard/general/home/company']">Company</a></li>
+          <li class="breadcrumb-item active">create New Company</li>
         </ol>
       </nav>
+    </div>
+    <div class="col-2 d-flex align-items-center">
+       <input type="search" name="" id="" class="form-control pl-5 position-relative">
+       <i class="fas fa-search text-gray position-absolute pl-2"></i>
     </div>
   </div>
   <div class="row">
@@ -16,14 +21,14 @@
         <div class="container-fluid">
           <div class="row py-3 border-bottom">
             <div class="col-8 d-flex align-items-center">
-              <span class="bg-light d-flex align-items-center justify-content-center py-2 px-2 rounded-circle mx-2" (click)="back()"><span class="lnr lnr-arrow-left"></span></span>
+              <span class="bg-icon d-flex align-items-center justify-content-center py-2 px-2 rounded-circle border-0 mx-2" (click)="back()"><i class="fas icon point fa-arrow-left"></i></span>
               <span>Create New Company</span>
             </div>
             <div class="col-4 d-flex align-items-center justify-content-end">
               <span class="px-2">Select Color</span>
               <div class="dropdown">
-                <button class="btn btn-light btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <div [ngStyle]="{backgroundColor: company.color}" style="width: 20px; height: 20px; border-radius: 50%;"></div>
+                <button class="btn btn-select btn-default btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <div [ngStyle]="{backgroundColor: company.color}" style="width: 30px; height: 30px; border-radius: 50%;"></div>
                 </button>
                 <div class="dropdown-menu py-0" aria-labelledby="dropdownMenuButton">
                   <div class="container-fluid">
@@ -49,154 +54,166 @@
             </div>
           </div>
           <div class="row py-3">
-            <div class="col-lg-6 col-12">
-              <div class="form-group">
-                <label for="companyname">Comapnay Name</label>
-                <input [(ngModel)]="company.name" type="text" class="form-control" id="companyname" placeholder="Comapnay Name">
-              </div>
-            </div>
-            <div class="col-lg-3 col-12">
-              <div class="form-group">
-                <label for="companycode">Comapnay Code</label>
-                <input [(ngModel)]="company.code" type="text" class="form-control" id="companycode" placeholder="Eg: CVP-Creative">
-              </div>
-            </div>
-            <div class="col-lg-3 col-12">
-              <div class="form-group">
-                <label for="companycode">Phone</label>
-                <div class="input-group">
-                  <input [(ngModel)]="company.phone" type="number" class="form-control" placeholder="phone number">
-                  <div class="input-group-append">
-                    <span class="input-group-text" id="basic-addon2">@</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-3 col-12">
-              <div class="form-group">
-                <label for="companycode">Email</label>
-                <div class="input-group">
-                  <input [(ngModel)]="company.email" type="mail" class="form-control" placeholder="Email id">
-                  <div class="input-group-append">
-                    <span class="input-group-text" id="basic-addon2">@</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-3 col-12">
-              <div class="form-group">
-                <label for="companycode">Fax</label>
-                <div class="input-group">
-                  <input [(ngModel)]="company.fax" type="number" class="form-control" placeholder="Fax">
-                  <div class="input-group-append">
-                    <span class="input-group-text" id="basic-addon2">@</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-3 col-12">
-              <div class="form-group">
-                <label for="companycode">Website</label>
-                <input [(ngModel)]="company.website" type="text" class="form-control" id="companycode" placeholder="www.sample.com">
-              </div>
-            </div>
-            <div class="col-lg-3 col-12">
-              <div class="form-group">
-                <label for="companycode">Country</label>
-                <div class="select-wraper">
-                  <select [(ngModel)]="company.country" class="form-control">
-                    <option *ngFor="let country of countryList" value="{{country}}">{{country}}</option>
-                  </select>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-3 col-12">
-              <div class="form-group">
-                <label for="companycode">Address line 1</label>
-                <input [(ngModel)]="company.address1" type="text" class="form-control" id="companycode" placeholder="Strert, Area, Zip">
-              </div>
-            </div>
-            <div class="col-lg-3 col-12">
-              <div class="form-group">
-                <label for="companycode">Address line 2</label>
-                <input [(ngModel)]="company.address2" type="text" class="form-control" id="companycode" placeholder="City, State">
-              </div>
-            </div>
-            <div class="col-lg-3 col-12 d-flex align-items-center">
-              <div class="form-group">
-                <label for="exampleInputEmail1">Status</label>
-                <div class="custom-control custom-switch">
-                  <input type="checkbox" [(ngModel)]="company.status" class="custom-control-input" id="Status" >
-                  <label class="custom-control-label" for="Status"></label>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-3 col-12 d-flex align-items-center">
-              <div class="form-group">
-                <label for="exampleInputEmail1">Report</label>
-                <div class="custom-control custom-switch">
-                  <input type="checkbox" [(ngModel)]="company.report" class="custom-control-input" id="report" >
-                  <label class="custom-control-label" for="report"></label>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 col-12">
-              <div class="d-flex flex-column">
-                <label for="companylogo">Logo</label>
-                <div class="d-flex">
-                  <input type="file" name="" (change)="logoSelect($event)" id="companylogo" *ngIf="company.logo === null">
-                  <div class="d-flex justify-content-center align-items-center position-relative" *ngIf="company.logo !== null">
-                    <img src="{{company.logo}}"  height="150px">
-                    <div class="box border-danger text-danger position-absolute d-flex align-items-center justify-content-center">
-                      <i class="las la-times-circle" (click)="logoclose()"></i>
+            <div class="col-6">
+              <div class="contanier-fluid">
+                <div class="row">
+                  <div class="col-lg-12 col-12">
+                    <div class="form-group">
+                      <label for="companycode">Comapnay Name</label>
+                      <input [(ngModel)]="company.name" type="text" class="form-control" id="companycode" placeholder="Company Name">
                     </div>
                   </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 col-12">
-              <div class="d-flex flex-column">
-                <label for="companylogo">Header</label>
-                <div class="d-flex">
-                  <input type="file" name="" (change)="headerSelect($event)" id="companylogo" *ngIf="company.header === null">
-                  <div class="d-flex justify-content-center align-items-center position-relative" *ngIf="company.header !== null">
-                      <img src="{{company.header}}"  height="150px">
-                    <div class="box border-danger text-danger position-absolute d-flex align-items-center justify-content-center">
-                      <i class="las la-times-circle" (click)="headerclose()"></i>
+                  <div class="col-lg-6 col-12">
+                    <div class="form-group">
+                      <label for="companycode">Email</label>
+                      <div class="input-group">
+                        <input [(ngModel)]="company.email" type="mail" class="form-control" placeholder="Email id">
+                        <div class="input-group-append">
+                          <span class="input-group-text" id="basic-addon2">@</span>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 col-12">
-              <div class="d-flex flex-column">
-                <label for="companylogo">Footer</label>
-                <div class="d-flex">
-                  <input type="file" name="" (change)="footerSelect($event)" id="companylogo" *ngIf="company.footer === null">
-                  <div class="d-flex justify-content-center align-items-center position-relative" *ngIf="company.footer !== null">
-                    <img src="{{company.footer}}" height="150px">
-                    <div class="box border-danger text-danger position-absolute d-flex align-items-center justify-content-center">
-                      <i class="las la-times-circle" (click)="footerclose()"></i>
+                  <div class="col-lg-6 col-12">
+                    <div class="form-group">
+                      <label for="companycode">Fax</label>
+                      <div class="input-group">
+                        <input [(ngModel)]="company.fax" type="number" class="form-control" placeholder="Fax">
+                        <div class="input-group-append">
+                          <span class="input-group-text" id="basic-addon2"><i class="las la-exclamation-circle"></i></span>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </div>
-            </div>
+                  <div class="col-lg-6 col-12">
+                    <div class="form-group">
+                      <label for="companycode">Address line 1</label>
+                      <input [(ngModel)]="company.address1" type="text" class="form-control" id="companycode" placeholder="Strert, Area, Zip">
+                    </div>
+                  </div>
+                  <div class="col-lg-6 col-12">
+                    <div class="form-group">
+                      <label for="companycode">Address line 2</label>
+                      <input [(ngModel)]="company.address2" type="text" class="form-control" id="companycode" placeholder="City, State">
+                    </div>
+                  </div>
+                  <div class="col-lg-6 col-12 d-flex align-items-center">
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Status</label>
+                      <div class="custom-control custom-switch">
+                        <input type="checkbox" [(ngModel)]="company.status" class="custom-control-input" id="Status" >
+                        <label class="custom-control-label" for="Status"></label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-6 col-12 d-flex align-items-center">
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Report</label>
+                      <div class="custom-control custom-switch">
+                        <input type="checkbox" [(ngModel)]="company.report" class="custom-control-input" id="report" >
+                        <label class="custom-control-label" for="report"></label>
+                      </div>
+                    </div>
+                  </div>
 
+                </div>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-lg-6 col-12">
+                    <div class="form-group">
+                      <label for="companycode">Comapnay Code</label>
+                      <input [(ngModel)]="company.code" type="text" class="form-control" id="companycode" placeholder="Eg: CVP-Creative">
+                    </div>
+                  </div>
+                  <div class="col-lg-6 col-12">
+                    <div class="form-group">
+                      <label for="companycode">Phone</label>
+                      <div class="input-group">
+                        <input [(ngModel)]="company.phone" type="number" class="form-control" placeholder="phone number">
+                        <div class="input-group-append">
+                          <span class="input-group-text" id="basic-addon2"><i class="las la-exclamation-circle"></i></span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-6 col-12">
+                    <div class="form-group">
+                      <label for="companycode">Website</label>
+                      <input [(ngModel)]="company.website" type="text" class="form-control" id="companycode" placeholder="www.sample.com">
+                    </div>
+                  </div>
+                  <div class="col-lg-6 col-12">
+                    <div class="form-group">
+                      <label for="companycode">Country</label>
+                      <div class="select-wraper">
+                        <select [(ngModel)]="company.country" class="form-control">
+                          <option *ngFor="let country of countryList" value="{{country}}">{{country}}</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-12">
+                    <div class="d-flex flex-column">
+                      <label for="companylogo">Logo</label>
+                      <div class="d-flex">
+                        <input type="file" name="" (change)="logoSelect($event)" id="companylogo" *ngIf="company.logo === null">
+                        <div class="d-flex justify-content-center align-items-center position-relative" *ngIf="company.logo !== null">
+                          <img src="{{company.logo}}"  height="150px">
+                          <div class="box border-danger text-danger position-absolute d-flex align-items-center justify-content-center">
+                            <i class="las la-times-circle" (click)="logoclose()"></i>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-12">
+                    <div class="d-flex flex-column">
+                      <label for="companylogo">Header</label>
+                      <div class="d-flex">
+                        <input type="file" name="" (change)="headerSelect($event)" id="companylogo" *ngIf="company.header === null">
+                        <div class="d-flex justify-content-center align-items-center position-relative" *ngIf="company.header !== null">
+                            <img src="{{company.header}}"  height="150px">
+                          <div class="box border-danger text-danger position-absolute d-flex align-items-center justify-content-center">
+                            <i class="las la-times-circle" (click)="headerclose()"></i>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 col-12">
+                    <div class="d-flex flex-column">
+                      <label for="companylogo">Footer</label>
+                      <div class="d-flex">
+                        <input type="file" name="" (change)="footerSelect($event)" id="companylogo" *ngIf="company.footer === null">
+                        <div class="d-flex justify-content-center align-items-center position-relative" *ngIf="company.footer !== null">
+                          <img src="{{company.footer}}" height="150px">
+                          <div class="box border-danger text-danger position-absolute d-flex align-items-center justify-content-center">
+                            <i class="las la-times-circle" (click)="footerclose()"></i>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-
+          <div class="row p-3">
+            <div class="col-12 d-flex align-items-center justify-content-end">
+              <button class="btn btn-primary blue-btn" (click)="save()" *ngIf="addFlag">Save</button>
+            </div>
+            <div class="col-12 d-flex align-items-center justify-content-end">
+              <button class="btn btn-primary" (click)="update()" *ngIf="updateFlag">Update</button>
+            </div>
+          </div>
 
         </div>
       </div>
     </div>
   </div>
-  <div class="row py-3">
-    <div class="col-12 d-flex align-items-center justify-content-end">
-      <button class="btn bg-primary" (click)="save()" *ngIf="addFlag">Save</button>
-    </div>
-    <div class="col-12 d-flex align-items-center justify-content-end">
-      <button class="btn bg-primary" (click)="update()" *ngIf="updateFlag">Update</button>
-    </div>
-  </div>
+
 </div>
 

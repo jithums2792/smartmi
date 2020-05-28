@@ -1,59 +1,78 @@
 <div class="container-fluid">
   <div class="row py-2">
    <div class="col-4">
-     <span>List of MAnufatures</span>
+     <span>List of Manufatures</span>
    </div>
    <div class="col-8 d-flex justify-content-end">
-     <button class="btn bg-primary btn-sm" *ngIf="!brandaddFlag" (click)="brandaddFlag = !brandaddFlag">Create New Brand</button>
+     <button class="btn blue-btn btn-primary btn-sm" data-toggle="modal" data-target="#exampleModal">Create New Brand</button>
    </div>
 
    <!-- create brand -->
-   <div class="col-12 my-2" *ngIf="brandaddFlag">
-     <div class="card">
-       <div class="container-fluid">
-         <div class="row border-bottom">
-           <div class="col-8 py-2">
-            <div class="form-group">
-              <label for="name">Name of Manufature</label>
-              <input [(ngModel)]="brand.name" type="text" class="form-control" id="name" placeholder="Name">
-            </div>
-            <div class="form-group">
-              <label for="website">website</label>
-              <input [(ngModel)]="brand.website" type="text" class="form-control" id="website" placeholder="www.sample.com">
-            </div>
-           </div>
-           <div class="col-4 py-2">
-            <span>Logo</span>
-            <div class="" *ngIf="brand.logo === null">
-              <input type="file" name="logo" id="logo" (change)="logoSelect($event)">
-            </div>
-            <div class="w-100 position-relative d-flex justify-content-center align-items-center" *ngIf="brand.logo !== null">
-              <img src="{{brand.logo}}" width="100%" height="130px" alt="{{brand.name}}" class="position-relative">
-              <div class="position-absolute box text-danger">
-                <i class="las la-times-circle" (click)="brand.logo = null"></i>
+   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Add new manufacturer</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body p-0">
+          <div class="container-fluid">
+            <div class="row">
+
+              <div class="col-12 px-0 my-2">
+                  <div class="container-fluid">
+                    <div class="row">
+                      <div class="col-8 py-2">
+                       <div class="form-group">
+                         <label for="name">Name of Manufature</label>
+                         <input [(ngModel)]="brand.name" type="text" class="form-control" id="name" placeholder="Name">
+                       </div>
+                       <div class="form-group">
+                         <label for="website">website</label>
+                         <input [(ngModel)]="brand.website" type="text" class="form-control" id="website" placeholder="www.sample.com">
+                       </div>
+                      </div>
+                      <div class="col-4 py-2">
+                       <span>Logo</span>
+                       <div class="" *ngIf="brand.logo === null">
+                         <input type="file" name="logo" id="logo" (change)="logoSelect($event)">
+                       </div>
+                       <div class="w-100 position-relative d-flex justify-content-center align-items-center" *ngIf="brand.logo !== null">
+                         <img src="{{brand.logo}}" width="100%" height="130px" alt="{{brand.name}}" class="position-relative">
+                         <div class="position-absolute box text-danger">
+                           <i class="las la-times-circle" (click)="brand.logo = null"></i>
+                         </div>
+                       </div>
+                      </div>
+                    </div>
+                    <div class="row py-2">
+                      <div class="col-12 d-flex align-items-center justify-content-between">
+                       <div class="custom-control custom-switch">
+                         <input type="checkbox" [(ngModel)]="brand.active" class="custom-control-input" id="customSwitch1">
+                         <label class="custom-control-label" for="customSwitch1">Active</label>
+                       </div>
+                      </div>
+                    </div>
+                  </div>
               </div>
+
             </div>
-           </div>
-         </div>
-         <div class="row py-2">
-           <div class="col-12 d-flex align-items-center justify-content-between">
-            <div class="custom-control custom-switch">
-              <input type="checkbox" [(ngModel)]="brand.active" class="custom-control-input" id="customSwitch1">
-              <label class="custom-control-label" for="customSwitch1">Active</label>
-            </div>
-            <div class="d-flex">
-              <button class="btn btn-secondary btn-sm mx-1" (click)="close()">Close</button>
-              <button class="btn btn-secondary btn-sm mx-1" (click)="save()" *ngIf="!brandeditFlag">Save</button>
-              <button class="btn btn-secondary btn-sm mx-1" (click)="update()" *ngIf="brandeditFlag">Update</button>
-            </div>
-           </div>
-         </div>
-       </div>
-     </div>
-   </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary blue-btn" (click)="save()" *ngIf="!brandeditFlag">Save</button>
+          <button type="button" class="btn btn-primary blue-btn" (click)="update()" *ngIf="brandeditFlag">Save</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
    <!-- create brand -->
   </div>
-  <div class="row py-3 bg-light">
+  <div class="row py-3">
     <div class="col-2">
       <span>Logo</span>
     </div>
@@ -81,7 +100,7 @@
     </div>
     <div class="col-3 d-flex align-items-center justify-content-end">
       <div class="">
-        <i class="las la-edit" (click)="edit(item)"></i>
+        <i class="las la-edit" (click)="edit(item)" data-toggle="modal" data-target="#exampleModal"></i>
         <i class="las la-trash-alt" (click)="delete(item)"></i>
       </div>
     </div>

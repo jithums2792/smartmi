@@ -1,51 +1,51 @@
 <div class="container-fluid">
   <div class="row">
-    <div class="col-12 d-flex justify-content-center tile align-items-center py-4" [popover]="dashboard" [popoverOnHover]="false" (click)="navigate('dashboard/home')">
-      <span class="material-icons text-white">
-        dashboard
-      </span>
-    </div>
-    <div class="col-12 d-flex justify-content-center tile align-items-center py-4" [popover]="leads"
-      [popoverOnHover]="false" (click)="navigate('dashboard/leads')">
-      <span class="material-icons text-white">
-        bookmark_border
-      </span>
-    </div>
-    <div class="col-12 d-flex justify-content-center tile align-items-center py-4" [popover]="quotes"
-      [popoverOnHover]="false" (click)="navigate('dashboard/quotes')">
-      <span class="material-icons text-white">
-        description
-      </span>
-    </div>
-    <div class="col-12 d-flex justify-content-center tile align-items-center py-4" [popover]="products"
+
+    <div class="col-12 d-flex justify-content-center tile align-items-center py-3" [popover]="leads"
       [popoverOnHover]="false" >
-      <span class="material-icons text-white">
-        storefront
-      </span>
+      <div class="d-flex box align-items-center justify-content-center point" [routerLink]="['/dashboard/leads']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:
+        true}">
+        <i class="demo-icon icon-smartmileads">&#xe807;</i>
+      </div>
     </div>
-    <div class="col-12 d-flex justify-content-center tile align-items-center py-4" [popover]="users"
-      [popoverOnHover]="false" (click)="navigate('dashboard/users')">
-      <span class="material-icons text-white">
-        person_outline
-      </span>
-    </div>
-    <div class="col-12 d-flex justify-content-center tile align-items-center py-4" [popover]="customers"
+    <div class="col-12 d-flex justify-content-center tile align-items-center py-3" [popover]="quotes"
       [popoverOnHover]="false">
-      <span class="material-icons text-white">
-        people_outline
-      </span>
+      <div class="d-flex box align-items-center justify-content-center point"  [routerLink]="['/dashboard/quotes']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:
+        true}">
+        <i class="demo-icon icon-smartmiquotes">&#xe80d;</i>
+      </div>
     </div>
-    <div class="col-12 d-flex justify-content-center tile align-items-center py-4" [popover]="projects"
+    <div class="col-12 d-flex justify-content-center tile align-items-center py-3" [popover]="products"
+      [popoverOnHover]="false" >
+      <div class="d-flex box align-items-center justify-content-center point">
+        <i class="demo-icon icon-smartmiproducs">&#xe80b;</i>
+      </div>
+    </div>
+    <div class="col-12 d-flex justify-content-center tile align-items-center py-3" [popover]="users"
       [popoverOnHover]="false">
-      <span class="material-icons text-white">
-        extension
-      </span>
+      <div class="d-flex box align-items-center justify-content-center point" [routerLink]="['/dashboard/users']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:
+        true}">
+        <i class="demo-icon icon-smartmiusers">&#xe810;</i>
+      </div>
     </div>
-    <div class="col-12 d-flex justify-content-center tile align-items-center py-4" [popover]="general"
-      [popoverOnHover]="false" (click)="navigate('dashboard/general')">
-      <span class="material-icons text-white">
-        layers
-      </span>
+    <div class="col-12 d-flex justify-content-center tile align-items-center py-3" [popover]="customers"
+      [popoverOnHover]="false">
+      <div class="d-flex box align-items-center justify-content-center point">
+        <i class="demo-icon icon-smartmicustomers">&#xe802;</i>
+      </div>
+    </div>
+    <div class="col-12 d-flex justify-content-center tile align-items-center py-3" [popover]="projects"
+      [popoverOnHover]="false">
+      <div class="d-flex box align-items-center justify-content-center point">
+        <i class="demo-icon icon-smartmiprojects">&#xe80c;</i>
+      </div>
+    </div>
+    <div class="col-12 d-flex justify-content-center tile align-items-center py-3" [popover]="general"
+      [popoverOnHover]="false">
+      <div class="d-flex box align-items-center justify-content-center point" [routerLink]="['/dashboard/general/home/company']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:
+        true}">
+        <i class="demo-icon icon-smartmigeneral">&#xe805;</i>
+      </div>
     </div>
 
     <popover-content #dashboard  placement="right" [animation]="true" [closeOnClickOutside]="true" [closeOnMouseOutside]="false">

@@ -11,7 +11,6 @@ import { ProductsComponent } from './products/products.component';
 
 const routes: Routes = [
   {path: '', component: DashboardComponent, children: [
-    {path: 'home', component: HomeComponent},
     {path: 'leads', component: LeadsComponent},
     {path: 'createlead', component: LeadcreateComponent},
     {path: 'quotes', component: QuotesComponent},
@@ -19,7 +18,7 @@ const routes: Routes = [
     {path: 'products', component: ProductsComponent},
     {path: 'general', loadChildren: () => import('./general/general.module').then(m => m.GeneralModule)},
     {path: 'users', loadChildren: () => import('./users/users.module').then(m => m.UsersModule)},
-        {path: '', redirectTo: 'home', pathMatch: 'full'},
+        {path: '', redirectTo: 'general', pathMatch: 'full'},
   ]}
 ];
 

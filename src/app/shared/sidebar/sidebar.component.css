@@ -1,4 +1,15 @@
-.tile:hover {
-  background-color: rgb(72, 99, 255);
-  cursor: pointer;
+
+.box {
+  width: 40px;
+  height: 40px;
+  border-radius: 2px;
+  align-items: center;
+  background-color: transparent;
+}
+.box:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+.active {
+  background-color: white !important;
+  color: #5E77FC !important;
 }

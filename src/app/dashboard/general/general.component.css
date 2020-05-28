@@ -1,8 +1,36 @@
-.breadcrumb-item+.breadcrumb-item::before{
-  content: '' !important;
-  background: #dad9e8 !important;
-  width: 4px !important;
-  height: 8px !important;
-  border-radius: 50% !important;
-  margin-right: 7px !important;
+.smartmi-card {
+  border-radius: 4px;
+}
+.title1 {
+  font-family: poppins-medium;
+  font-size: 16px;
+  font-weight:500;
+  letter-spacing: .3px;
+}
+.sub-title1 {
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+}
+.active {
+    background: #5e77ff !important;
+    color: #fff !important;
+}
+.active:focus {
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+.icon {
+  font-size: 1rem;
+  color: #646B9A;
+}
+.custom-card {
+  line-height: 15px;
+}
+.tile {
+  color: #616377;
+}
+.fa-chevron-right {
+  font-size: 12px;
 }

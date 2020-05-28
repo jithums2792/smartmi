@@ -4,6 +4,7 @@
 
 export const environment = {
   production: false,
+  // api: 'http://ec2-13-126-37-194.ap-south-1.compute.amazonaws.com/api/api/'
   api: 'http://localhost:3000/api/'
 };
 

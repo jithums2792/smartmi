@@ -1,13 +1,17 @@
 <div class="container-fluid">
 
-  <div class="row py-3 border-bottom">
-    <div class="col-12 d-flex align-items-center justify-content-between">
-      <span class="title">Companies</span>
-      <button class="btn bg-primary sub-title" (click)="navigate('dashboard/general/createcompany')">Create New Company</button>
+  <div class="row  px-3">
+    <div class="col-12 pb-3 border-bottom px-0 d-flex align-items-center justify-content-between">
+      <div class="col px-0">
+        <span class="text-gray">Companies</span>
+      </div>
+      <div class="col px-0 d-flex justify-content-end align-items-center">
+        <button class="btn btn-primary " (click)="navigate('dashboard/general/createcompany')">Create New Company</button>
+      </div>
     </div>
   </div>
 
-  <div class="row my-3">
+  <div class="row py-4 px-0">
     <div class="col-6" *ngFor="let company of companyLList">
       <div class="card p-2">
         <div class="w-100 d-flex align-items-center justify-content-end">
@@ -15,10 +19,10 @@
         </div>
         <div class="w-100 border-bottom d-flex align-items-center">
           <img src="{{company.logo}}" width="70px " height="70px" alt="">
-          <div class="d-flex flex-column px-3">
-            <span class="text-primary title">{{company.name}}</span>
-            <span class="sub-title">{{company.email}}</span>
-            <span class="sub-title text-gray">{{company.phone}}</span>
+          <div class="d-flex flex-column pl-4">
+            <span class=" userNameColor">{{company.name}}</span>
+            <span class="productDescvalue">{{company.email}}</span>
+            <span class="productDescTitle">{{company.phone}}</span>
           </div>
         </div>
         <div class="w-100 d-flex align-items-center justify-content-between py-4">
